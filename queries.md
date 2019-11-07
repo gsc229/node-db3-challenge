@@ -19,10 +19,11 @@ SELECT ProductName, Quantity, OrderId	 FROM [OrderDetails]
 JOIN Products
 ON OrderDetails.ProductId = Products.ProductId
 WHERE OrderId = 10251
+ORDER BY ProductName;
 
 
 ### Display the OrderID, CustomerName and the employee's LastName for every order. All columns should be labeled clearly. Displays 196 records.
-SELECT Orders.OrderID, Customers.CustomerName, Employees.LastName
+SELECT Orders.OrderID, Customers.CustomerName, Employees.LastName AS EmployeeLastName
 FROM ((Orders
 INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID)
 INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID);
